@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var tableview: UITableView!
     var people = ["John Doe", "Harry Potter" , "Jane Doe"]
     var places = ["Paris", "Rome", "Dakar", "New York"]
+    var states = ["California", "Utah", "Colorado"]
     var searchable  = [Searchable]()
 
     
@@ -38,15 +39,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if searchable[indexPath.row].user.name != nil {
+       
+        // Setting the User Name OPtional
+        if searchable[indexPath.row].user.name != nil && searchable[indexPath.row].user.state != nil{
             // Diplay User Cell
             let cell : UserCell = tableview.dequeueReusableCell(withIdentifier: "usercell", for: indexPath) as! UserCell
             cell.mylabel.text = searchable[indexPath.row].user.name
+            
+            //Where is a better place to put this optional?
+            cell.stateLabel.text = searchable[indexPath.row].user.state
+            
             return cell
         }
         else {
             // Display Place Cell
             let cell : PlaceCell = tableview.dequeueReusableCell(withIdentifier: "placecell", for: indexPath) as! PlaceCell
+            
             cell.mylabel.text = searchable[indexPath.row].place.name
             return cell
 
@@ -67,12 +75,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func populate_array(){
         
-        for each in people {
+//        for each in people {
+//            var user = User()
+//            user.name = each
+//            var element = Searchable()
+//            element.user = user
+//            self.searchable.append(element)
+//        }
+
+        // populate the user with both states and people
+        var i = 0
+        while(i < people.count)
+        {
             var user = User()
-            user.name = each
+            user.name = people[i]
+            user.state = states[i]
             var element = Searchable()
             element.user = user
             self.searchable.append(element)
+            
+            i = i + 1
         }
         
         for each in people {
@@ -88,6 +110,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     class User {
         var name : String?
+        var state: String?
+        
+        // String Optional
         
     }// end User Class
     
@@ -96,8 +121,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }// end Place class
     
+    
     class Searchable {
-        
+        //Searchable Class has a NameObject and a PlaceObject
         var place = Place()
         var user  = User()
         

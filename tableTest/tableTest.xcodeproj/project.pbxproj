@@ -16,6 +16,9 @@
 		18045D2825733463001FD290 /* tableTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18045D2725733463001FD290 /* tableTestUITests.swift */; };
 		18045D38257336F5001FD290 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18045D37257336F5001FD290 /* UserCell.swift */; };
 		18045D3A25733721001FD290 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18045D3925733721001FD290 /* PlaceCell.swift */; };
+		18045D3C25739D0F001FD290 /* Dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 18045D3B25739D0F001FD290 /* Dog.png */; };
+		18045D3E25739E1A001FD290 /* gecko.png in Resources */ = {isa = PBXBuildFile; fileRef = 18045D3D25739E19001FD290 /* gecko.png */; };
+		18045D4025739E21001FD290 /* Cow.png in Resources */ = {isa = PBXBuildFile; fileRef = 18045D3F25739E21001FD290 /* Cow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		18045D2925733463001FD290 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18045D37257336F5001FD290 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		18045D3925733721001FD290 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		18045D3B25739D0F001FD290 /* Dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dog.png; sourceTree = "<group>"; };
+		18045D3D25739E19001FD290 /* gecko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gecko.png; sourceTree = "<group>"; };
+		18045D3F25739E21001FD290 /* Cow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 				18045D0E25733462001FD290 /* Assets.xcassets */,
 				18045D1025733462001FD290 /* LaunchScreen.storyboard */,
 				18045D1325733462001FD290 /* Info.plist */,
+				18045D3F25739E21001FD290 /* Cow.png */,
+				18045D3B25739D0F001FD290 /* Dog.png */,
+				18045D3D25739E19001FD290 /* gecko.png */,
 			);
 			path = tableTest;
 			sourceTree = "<group>";
@@ -238,7 +247,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18045D3C25739D0F001FD290 /* Dog.png in Resources */,
+				18045D3E25739E1A001FD290 /* gecko.png in Resources */,
 				18045D1225733462001FD290 /* LaunchScreen.storyboard in Resources */,
+				18045D4025739E21001FD290 /* Cow.png in Resources */,
 				18045D0F25733462001FD290 /* Assets.xcassets in Resources */,
 				18045D0D25733462001FD290 /* Main.storyboard in Resources */,
 			);

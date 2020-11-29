@@ -11,6 +11,8 @@ import UIKit
 class UserCell: UITableViewCell {
     @IBOutlet var mylabel : UILabel!
     
+    @IBOutlet var stateLabel : UILabel!
+    
     
     
     override func awakeFromNib() {
