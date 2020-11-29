@@ -51,6 +51,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="animalPicture" destination="UBI-Yn-oI3" id="ZPx-9N-abc"/>
                                             <outlet property="mylabel" destination="jwj-VD-r6h" id="0MF-H7-gqx"/>
                                             <outlet property="stateLabel" destination="TTr-7x-Bhi" id="3DE-fQ-BBO"/>
                                         </connections>

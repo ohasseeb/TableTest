@@ -10,7 +10,8 @@ import UIKit
 
 class UserCell: UITableViewCell {
     @IBOutlet var mylabel : UILabel!
-    
+    // Add the Image View
+    @IBOutlet weak var animalPicture: UIImageView!
     @IBOutlet var stateLabel : UILabel!
     
     

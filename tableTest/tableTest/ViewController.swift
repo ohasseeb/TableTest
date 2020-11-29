@@ -16,8 +16,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var people = ["John Doe", "Harry Potter" , "Jane Doe"]
     var places = ["Paris", "Rome", "Dakar", "New York"]
     var states = ["California", "Utah", "Colorado"]
+    //var pictures = ["Cow.png", "Dog.png", "gecko.png"]
     var searchable  = [Searchable]()
-
+    // IS there a nicer way to have pictures cause it's not readable to see which picture is which
+    var pictures = [#imageLiteral(resourceName: "Dog.png"), #imageLiteral(resourceName: "Cow.png"), #imageLiteral(resourceName: "gecko.png")]
     
 
     override func viewDidLoad() {
@@ -41,13 +43,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         // Setting the User Name OPtional
-        if searchable[indexPath.row].user.name != nil && searchable[indexPath.row].user.state != nil{
+        // IS it ok to have an optional this long, can it
+        // Be reWritten?, what if one is nil is that ok? [NO] so fix
+        if searchable[indexPath.row].user.name != nil && searchable[indexPath.row].user.state != nil && searchable[indexPath.row].user.picture != nil{
             // Diplay User Cell
             let cell : UserCell = tableview.dequeueReusableCell(withIdentifier: "usercell", for: indexPath) as! UserCell
             cell.mylabel.text = searchable[indexPath.row].user.name
             
-            //Where is a better place to put this optional?
+            //Where is a better place to put this optional? Ans: It's fine because i include it in the if statement
             cell.stateLabel.text = searchable[indexPath.row].user.state
+            
+            // When Adding an image to an Image View
+            // UIIMAGEVIEW.image gives you the image
+            cell.animalPicture.image = searchable[indexPath.row].user.picture
+
             
             return cell
         }
@@ -56,6 +65,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let cell : PlaceCell = tableview.dequeueReusableCell(withIdentifier: "placecell", for: indexPath) as! PlaceCell
             
             cell.mylabel.text = searchable[indexPath.row].place.name
+            
+            
+            
             return cell
 
         }
@@ -90,6 +102,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             var user = User()
             user.name = people[i]
             user.state = states[i]
+            user.picture = pictures[i]
+            
+            
             var element = Searchable()
             element.user = user
             self.searchable.append(element)
@@ -111,6 +126,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     class User {
         var name : String?
         var state: String?
+        var picture: UIImage?
         
         // String Optional
         
